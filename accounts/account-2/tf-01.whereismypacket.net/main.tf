@@ -41,22 +41,11 @@ resource "cloudflare_argo" "argo" {
 
 resource "cloudflare_tiered_cache" "tiered-cache" {
   zone_id    = cloudflare_zone.zone.id
-  cache_type = "generic"
-}
-
-resource "cloudflare_regional_tiered_cache" "regional-tiered-cache" {
-  zone_id = cloudflare_zone.zone.id
-  value   = "on"
-}
-
-resource "cloudflare_url_normalization_settings" "url-normalization" {
-  zone_id = cloudflare_zone.zone.id
-  scope   = "incoming"
-  type    = "cloudflare"
+  cache_type = "smart"
 }
 
 module "cloudflare_bot_management" {
-  source = "github.com/MateusClepf/cf-Terraform-Org-management/modules/cloudflare-bot-management?ref=v1.0.0"
+  source = "github.com/MateusClepf/cf-Terraform-Org-management-modules/zone-modules/bot-management?ref=v1.0.0"
   
   zone_id = var.zone_id
 }
