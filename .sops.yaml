@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: .*terraform\.tfstate$
+    age: age1d4gw55krnp4axj742jq5ry80tzlvw3aqgd8c6tqrcgg60z3u2u6qffp2e9 # Public key

@@ -5,6 +5,9 @@
 *.tfstate
 *.tfstate.*
 
+# Leave encrypted state files available to commit
+!*.tfstate.enc
+
 # Crash log files
 crash.log
 crash.*.log
